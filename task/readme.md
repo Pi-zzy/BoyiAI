@@ -1,0 +1,23 @@
+开发一套基于眼底图像的眼疾智能识别系统，帮助眼科医生对7类眼疾（糖尿病、青光眼、白内障、AMD、高血压、近视和其他疾病/异常）双目彩色眼底图像准确识别，以进一步丰富现行眼疾识别的方式方法，提高基于眼底图像的眼疾智能识别的效率和精确性。使用pytorch框架进行开发，保存模型文件而且还需要推理的代码,开发完毕请编写文档，你可以用训练集的图片来运行测试代码，确保测试代码能够正常运行
+
+表格文件为标注，数据示例如下：
+
+| ID          | Patient Age                                          | Patient Sex | Left-Fundus | Right-Fundus | Left-Diagnostic Keywords                             | Right-Diagnostic Keywords                                   | N | D | G | C | A | H | M | O |
+| ----------- | ---------------------------------------------------- | ----------- | ----------- | ------------ | ---------------------------------------------------- | ----------------------------------------------------------- | - | - | - | - | - | - | - | - |
+| 0           | 69                                                   | Female      | 0_left.jpg  | 0_right.jpg  | cataract                                             | normal fundus                                               | 0 | 0 | 0 | 1 | 0 | 0 | 0 | 0 |
+| 1           | 57                                                   | Male        | 1_left.jpg  | 1_right.jpg  | normal fundus                                        | normal fundus                                               | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| 2           | 42                                                   | Male        | 2_left.jpg  | 2_right.jpg  | laser spot，moderate non proliferative retinopathy   | moderate non proliferative retinopathy                      | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 1 |
+| 3           | 66                                                   | Male        | 3_left.jpg  | 3_right.jpg  | normal fundus                                        | branch retinal artery occlusion                             | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 |
+| 4           | 53                                                   | Male        | 4_left.jpg  | 4_right.jpg  | macular epiretinal membrane                          | mild nonproliferative retinopathy                           | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 1 |
+| 5           | 50                                                   | Female      | 5_left.jpg  | 5_right.jpg  | moderate non proliferative retinopathy               | moderate non proliferative retinopathy                      | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 |
+| 6           | 60                                                   | Male        | 6_left.jpg  | 6_right.jpg  | macular epiretinal membrane                          | moderate non proliferative retinopathy，epiretinal membrane | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 1 |
+| 7           | 60                                                   | Female      | 7_left.jpg  | 7_right.jpg  | drusen                                               | mild nonproliferative retinopathy                           | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 1 |
+| 8           | 59                                                   | Male        | 8_left.jpg  | 8_right.jpg  | normal fundus                                        | normal fundus                                               | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| 9           | 54                                                   | Male        | 9_left.jpg  | 9_right.jpg  | normal fundus                                        | vitreous degeneration                                       | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 |
+| 10          | 70                                                   | Male        | 10_left.jpg | 10_right.jpg | epiretinal membrane                                  | normal fundus                                               | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 |
+| 11          | 60                                                   | Female      | 11_left.jpg | 11_right.jpg | moderate non proliferative retinopathy，hypertensive |                                                             |   |   |   |   |   |   |   |   |
+| retinopathy | moderate non proliferative retinopathy，hypertensive |             |             |              |                                                      |                                                             |   |   |   |   |   |   |   |   |
+| retinopathy | 0                                                    | 1           | 0           | 0            | 0                                                    | 1                                                           | 0 | 0 |   |   |   |   |   |   |
+| 12          | 65                                                   | Male        | 12_left.jpg | 12_right.jpg | retinal pigmentation                                 | retinal pigmentation                                        | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 |
+
+图片文件在Training_Datasets文件夹下，文件名格式为：ID_left.jpg，ID_right.jpg
