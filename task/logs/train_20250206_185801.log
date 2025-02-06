@@ -1,0 +1,25 @@
+
+Errors:
+Traceback (most recent call last):
+  File "/root/autodl-tmp/boyiAI/BoyiAI/task/code/train.py", line 56, in <module>
+    dataset = EyeDataset(csv_file='Traning_Dataset.xlsx', img_dir='Training_Datasets', transform=transform)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/autodl-tmp/boyiAI/BoyiAI/task/code/train.py", line 13, in __init__
+    self.annotations = pd.read_excel(csv_file)
+                       ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/pandas/io/excel/_base.py", line 495, in read_excel
+    io = ExcelFile(
+         ^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/pandas/io/excel/_base.py", line 1550, in __init__
+    ext = inspect_excel_format(
+          ^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/pandas/io/excel/_base.py", line 1402, in inspect_excel_format
+    with get_handle(
+         ^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/site-packages/pandas/io/common.py", line 882, in get_handle
+    handle = open(handle, ioargs.mode)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'Traning_Dataset.xlsx'
+
+
+Fatal error: 'ModelTrainerBot' object has no attribute '_update_communication'
